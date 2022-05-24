@@ -31,3 +31,7 @@ startButton.addEventListener("click", () => {
     }
     console.log(shuffledCards);
 })
+
+card.addEventListener("click", (event) => {
+    event.target.classList.add("flip");
+})
