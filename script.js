@@ -7,13 +7,19 @@ let cards = [
   "crash.png",
   "winston.png",
   "yuna.png",
-  "marlee.png",
-  "kitte.png",
-  "cash.png",
-  "crash.png",
-  "winston.png",
-  "yuna.png",
 ];
+
+function duplicate(array, duplicator) {
+  let buildDeck = [];
+  for (i = 0; i < array.length; i++) {
+    for (j = 0; j < duplicator; j++) {
+      buildDeck.push(array[i]);
+    }
+  }
+  return buildDeck;
+}
+
+duplicate(cards, 2);
 
 function shuffle(array) {
   let currentIndex = array.length,
