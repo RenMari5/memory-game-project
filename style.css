@@ -10,6 +10,13 @@ body {
   text-align: center;
 }
 
+#game-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .images {
   width: 100px;
   height: 100px;
