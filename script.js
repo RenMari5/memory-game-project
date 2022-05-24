@@ -1,6 +1,6 @@
 const startButton = document.getElementById("start-button");
 const gameContainer = document.getElementById("game-container");
-let cards = ['eevee-memory.jpg', 'winston-memory-2.jpg', 'pudge.jpg', 'smudge.jpg'];
+let cards = ['eevee-memory.jpg', 'eevee-memory.jpg', 'winston-memory-2.jpg', 'winston-memory-2.jpg', 'pudge.jpg', 'pudge.jpg', 'smudge.jpg', 'smudge.jpg'];
 
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -17,13 +17,17 @@ function shuffle(array) {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
+
+    return array;
 }
 
 startButton.addEventListener("click", () => {
     let shuffledCards = shuffle(cards);
-    for (let item of cards) {
-        let card = document.createElement("div");
-        card.src = `${item}`;
+    for (let item of shuffledCards) {
+        let card = document.createElement("img");
+        card.classList.add("images");
+        card.src = `/images/${item}`;
         gameContainer.appendChild(card);
     }
+    console.log(shuffledCards);
 })
