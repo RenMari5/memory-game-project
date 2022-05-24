@@ -5,11 +5,15 @@ body {
   background-size: cover;
 }
 
+#game-title {
+  font-family: "Pacifico", cursive;
+}
+
 .images {
-    width: 75px;
-    height: 100px;
-    margin: 10px;
-    border-radius: 5px;
+  width: 75px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .flip {
