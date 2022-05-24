@@ -7,6 +7,12 @@ let cards = [
   "crash.png",
   "winston.png",
   "yuna.png",
+  "marlee.png",
+  "kitte.png",
+  "cash.png",
+  "crash.png",
+  "winston.png",
+  "yuna.png",
 ];
 
 function duplicate(array, duplicator) {
