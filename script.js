@@ -15,6 +15,7 @@ let cards = [
   "yuna.png",
   "kitte.png",
 ];
+let gameCards = document.querySelectorAll(".images");
 
 function duplicate(array, duplicator) {
   let buildDeck = [];
@@ -51,21 +52,37 @@ function shuffle(array) {
 startButton.addEventListener("click", () => {
   let shuffledCards = shuffle(cards);
   for (let item of shuffledCards) {
-    let card = document.createElement("img");
-    card.classList.add("images");
-    card.src = `/images/${item}`;
-    gameContainer.appendChild(card);
+    let flipCard = document.createElement("div");
+    flipCard.classList.add("card");
+
+    let cardFront = document.createElement("img");
+    cardFront.classList.add("images");
+    cardFront.classList.add("front");
+    cardFront.src = `/images/${item}`;
+
+    let cardBack = document.createElement("img");
+    cardBack.classList.add("images");
+    cardBack.classList.add("back");
+    cardBack.src = "/images/Untitled design.png";
+
+    flipCard.appendChild(cardFront);
+    flipCard.appendChild(cardBack);
+
+    gameContainer.appendChild(flipCard);
   }
-  console.log(shuffledCards);
 });
 
-// card.addEventListener("click", (event) => {
-//   event.target.classList.add("flip");
-// });
+const flipCards = document.querySelectorAll(".card");
 
-resetButton.addEventListener("click", (event) => {
-    let cards = document.querySelectorAll(".images");
-    cards.forEach(card => {
-        gameContainer.removeChild(card);
+flipCards.forEach(card => {
+    card.addEventListener("click", () => {
+        card.classList.toggle("flipCard");
+    })
+});
+
+resetButton.addEventListener("click", () => {
+    flipCards.forEach(item => {
+        gameContainer.removeChild(item);
+        console.log(item);
     });
 });

@@ -26,6 +26,20 @@ body {
   align-self: center;
 }
 
-.flip {
+.card {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.front {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.back {
+  backface-visibility: hidden;
+}
+
+.flipCard {
   transform: rotateY(180deg);
 }
