@@ -64,7 +64,10 @@ card.addEventListener("click", (event) => {
 });
 
 resetButton.addEventListener("click", (event) => {
-  // let cardRemove = document.getElementById("cards");
-  // shuffledCards.classList.remove("images");
-  gameContainer.reset();
+  let cardRemove = document.getElementById("cards");
+  shuffledCards.classList.remove("images");
+
+  document.getElementById("form").reset();
+
+  //   getElementById("form").reset();
 });
