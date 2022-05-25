@@ -59,15 +59,13 @@ startButton.addEventListener("click", () => {
   console.log(shuffledCards);
 });
 
-card.addEventListener("click", (event) => {
-  event.target.classList.add("flip");
-});
+// card.addEventListener("click", (event) => {
+//   event.target.classList.add("flip");
+// });
 
 resetButton.addEventListener("click", (event) => {
-  let cardRemove = document.getElementById("cards");
-  shuffledCards.classList.remove("images");
-
-  document.getElementById("form").reset();
-
-  //   getElementById("form").reset();
+    let cards = document.querySelectorAll(".images");
+    cards.forEach(card => {
+        gameContainer.removeChild(card);
+    });
 });
