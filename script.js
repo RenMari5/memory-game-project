@@ -81,8 +81,8 @@ flipCards.forEach(card => {
 });
 
 resetButton.addEventListener("click", () => {
+    // Don't know why this isn't working now, it should be deleting each div with a class of .card
     flipCards.forEach(item => {
         gameContainer.removeChild(item);
-        console.log(item);
     });
 });
