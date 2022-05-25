@@ -13,15 +13,17 @@ body {
 #game-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .images {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin: 10px;
   border-radius: 5px;
+  align-self: center;
 }
 
 .flip {
