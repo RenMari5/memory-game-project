@@ -3,6 +3,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  cursor: url('/images/pawprint-cursor.png'), default;
 }
 
 #game-title {
@@ -34,6 +35,7 @@ body {
   background-color: transparent;
   border: none;
   margin: 10px;
+  cursor: pointer;
 }
 
 #reset-button {
@@ -46,6 +48,7 @@ body {
   background-color: transparent;
   border: none;
   margin: 10px;
+  cursor: pointer;
 }
 
 .images {
