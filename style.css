@@ -43,3 +43,9 @@ body {
 .flipCard {
   transform: rotateY(180deg);
 }
+
+.overlayImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
