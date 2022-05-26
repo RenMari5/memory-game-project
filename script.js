@@ -91,3 +91,10 @@ resetButton.addEventListener("click", () => {
   });
   return flipCards;
 });
+
+//matched cards
+const matchCards = (e) => {
+  console.log(e);
+  const matchedCard = e.target;
+  const flipCard = document.querySelectorAll(".toggle-card");
+};
