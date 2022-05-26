@@ -77,8 +77,6 @@ startButton.addEventListener("click", () => {
   }
 });
 
-const flipCards = document.querySelectorAll(".images");
-
 // flipCards.forEach((card) => {
 //   card.addEventListener("click", () => {
 //     card.classList.toggle("flip-card");
@@ -87,7 +85,9 @@ const flipCards = document.querySelectorAll(".images");
 
 resetButton.addEventListener("click", () => {
   // Don't know why this isn't working now, it should be deleting each div with a class of .card
+  const flipCards = document.querySelectorAll(".flip-card");
   flipCards.forEach((item) => {
     gameContainer.removeChild(item);
   });
+  return flipCards;
 });
