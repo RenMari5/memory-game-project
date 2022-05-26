@@ -11,11 +11,17 @@ body {
 }
 
 #game-container {
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
   /* align-items: center; */
-  flex-wrap: wrap;
-  flex-direction: row;
+  /* flex-wrap: wrap;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: repeat(3, 8rem);
+  grid-template-rows: repeat(3, 8rem);
+  grid-gap: 2rem;
+  justify-content: center;
+  align-content: center;
 }
 
 .images {
@@ -34,7 +40,7 @@ body {
   background-color: transparent;
   width: 150px;
   height: 150px;
-  border: 1px solid #f1f1f1;
+  /* border: 3px solid #f1f1f1; */
   perspective: 800px;
 }
 
