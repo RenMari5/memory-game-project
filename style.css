@@ -24,6 +24,22 @@ body {
   align-content: center;
 }
 
+#start-button {
+  background-image: url("/images/start-button.png");
+  height: 150px;
+  width: 150px;
+  background-position: center;
+  background-size: contain;
+}
+
+#reset-button {
+  background-image: url("/images/reset-button.png");
+  height: 150px;
+  width: 150px;
+  background-position: center;
+  background-size: contain;
+}
+
 .images {
   position: relative;
   transform-style: preserve-3d;
