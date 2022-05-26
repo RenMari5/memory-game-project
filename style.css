@@ -26,17 +26,19 @@ body {
 
 #start-button {
   background-image: url("/images/start-button.png");
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 125px;
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #reset-button {
   background-image: url("/images/reset-button.png");
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 125px;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
