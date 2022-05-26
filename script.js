@@ -57,16 +57,17 @@ startButton.addEventListener("click", () => {
 
     let cardFront = document.createElement("img");
     cardFront.classList.add("images");
-    cardFront.classList.add("flip-card-front", "inner-flip-card");
+    cardFront.classList.add("flip-card-front");
     cardFront.src = `/images/${item}`;
 
     let cardBack = document.createElement("img");
     cardBack.classList.add("images");
-    cardBack.classList.add("flip-card-back", "inner-flip-card");
+    cardBack.classList.add("flip-card-back");
     cardBack.src = "/images/Untitled design.png";
 
     flipCard.addEventListener("click", (e) => {
-      flipCard.classList.add("toggle-card");
+      cardFront.classList.add("toggle-card");
+      cardBack.classList.add("toggle-card");
     });
 
     flipCard.appendChild(cardFront);
