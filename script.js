@@ -65,6 +65,10 @@ startButton.addEventListener("click", () => {
     cardBack.classList.add("flip-card-back", "inner-flip-card");
     cardBack.src = "/images/Untitled design.png";
 
+    flipCard.addEventListener("click", (e) => {
+      flipCard.classList.add("toggle-card");
+    });
+
     flipCard.appendChild(cardFront);
     flipCard.appendChild(cardBack);
 
@@ -74,11 +78,11 @@ startButton.addEventListener("click", () => {
 
 const flipCards = document.querySelectorAll(".images");
 
-flipCards.forEach((card) => {
-  card.addEventListener("click", () => {
-    card.classList.toggle("flip-card");
-  });
-});
+// flipCards.forEach((card) => {
+//   card.addEventListener("click", () => {
+//     card.classList.toggle("flip-card");
+//   });
+// });
 
 resetButton.addEventListener("click", () => {
   // Don't know why this isn't working now, it should be deleting each div with a class of .card
