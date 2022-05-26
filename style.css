@@ -22,6 +22,7 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
   /* width: 150px;
   height: 150px;
   margin: 10px;
@@ -34,7 +35,7 @@ body {
   width: 150px;
   height: 150px;
   border: 1px solid #f1f1f1;
-  perspective: 1000px;
+  perspective: 800px;
 }
 
 /* .inner-flip-card {
@@ -63,9 +64,12 @@ body {
 .flip-card-front {
   background-color: orange;
   color: black;
-  transform: rotateY(180deg);
 }
 
 .flip-card-back {
   backface-visibility: hidden;
+}
+
+.toggle-card {
+  transform: rotateY(90deg);
 }
