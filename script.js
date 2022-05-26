@@ -75,6 +75,7 @@ startButton.addEventListener("click", () => {
 
     gameContainer.appendChild(flipCard);
   }
+  startButton.disabled = true;
 });
 
 // flipCards.forEach((card) => {
@@ -89,6 +90,7 @@ resetButton.addEventListener("click", () => {
   flipCards.forEach((item) => {
     gameContainer.removeChild(item);
   });
+  startButton.disabled = false;
   return flipCards;
 });
 
