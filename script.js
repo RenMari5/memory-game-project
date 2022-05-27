@@ -119,7 +119,7 @@ function displayTimer() {
   timerRef.innerHTML = `${m} : ${s}`;
 }
 
-// function now removes cards, but it does not keep the formatting of it
+
 // it also needs a delay on the remove toggle function but I couldn't figure out how to make that work
 function matchCards() {
   let toggledCards = document.querySelectorAll(".toggle-card");
@@ -127,11 +127,9 @@ function matchCards() {
   if (toggledCards.length === 4) {
     if (toggledCards[0].src === toggledCards[2].src) {
       console.log("match");
-      toggledCards.forEach((element) => {
-        element.parentElement.classList.add("matched");
+      toggledCards.forEach(element => {
+        element.parentElement.removeChild(element);
       });
-      let matchedCards = document.querySelectorAll(".matched");
-      removeCards(matchedCards);
     } else {
       console.log("not a match");
       toggledCards.forEach((element) => {
