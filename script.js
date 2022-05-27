@@ -8,43 +8,29 @@ let cards = [
   "winston.png",
   "yuna.png",
   "kitte.png",
-  "cash.png",
-  "crash.png",
-  "marlee.png",
-  "winston.png",
-  "yuna.png",
-  "kitte.png",
 ];
-let gameCards = document.querySelectorAll(".images");
 
 let [seconds, minutes] = [0, 0];
 let timerRef = document.getElementById("timerDisplay");
 let int = null;
 
-// function duplicate(array, duplicator) {
-//   let buildDeck = [];
-//   for (i = 0; i < array.length; i++) {
-//     for (j = 0; j < duplicator; j++) {
-//       buildDeck.push(array[i]);
-//     }
-//   }
-//   return buildDeck;
-// }
-
-// duplicate(cards, 2);
+function duplicate(array) {
+  let buildDeck = [...array];
+  for (i = 0; i < array.length; i++) {
+    buildDeck.push(array[i]);
+  }
+  return buildDeck;
+}
 
 function shuffle(array) {
   let currentIndex = array.length,
     temporaryValue,
     randomIndex;
 
-  // While there remain elements to shuffle...
   while (0 !== currentIndex) {
-    // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
 
-    // And swap it with the current element.
     temporaryValue = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
@@ -53,9 +39,8 @@ function shuffle(array) {
   return array;
 }
 
-startButton.addEventListener("click", () => {
-  let shuffledCards = shuffle(cards);
-  for (let item of shuffledCards) {
+function createCards(arrayOfCards) {
+  for (let item of arrayOfCards) {
     let flipCard = document.createElement("div");
     flipCard.classList.add("flip-card");
 
@@ -79,6 +64,21 @@ startButton.addEventListener("click", () => {
 
     gameContainer.appendChild(flipCard);
   }
+}
+
+function removeCards(arrayOfCards) {
+  arrayOfCards.forEach((item) => {
+    gameContainer.removeChild(item);
+  });
+  return arrayOfCards;
+}
+
+startButton.addEventListener("click", () => {
+  let duplicateCards = duplicate(cards);
+  let shuffledCards = shuffle(duplicateCards);
+
+  createCards(shuffledCards);
+  
   startButton.disabled = true;
 
   if (int !== null) {
@@ -87,43 +87,32 @@ startButton.addEventListener("click", () => {
   int = setInterval(displayTimer, 1000);
 });
 
-// flipCards.forEach((card) => {
-//   card.addEventListener("click", () => {
-//     card.classList.toggle("flip-card");
-//   });
-// });
-
 resetButton.addEventListener("click", () => {
-  // Don't know why this isn't working now, it should be deleting each div with a class of .card
+  let arrayOfCards = document.querySelectorAll(".flip-card");
+  removeCards(arrayOfCards);
 
-  const flipCards = document.querySelectorAll(".flip-card");
-  flipCards.forEach((item) => {
-    gameContainer.removeChild(item);
-  });
   startButton.disabled = false;
 
   clearInterval(int);
   [seconds, minutes] = [0, 0];
   timerRef.innerHTML = "00 : 00";
-
-  return flipCards;
 });
 
 function displayTimer() {
   seconds += 1;
-    if (seconds == 60) {
-      seconds = 0;
-      minutes++;
-      if (minutes == 60) {
-        minutes = 0;
-      }
+  if (seconds == 60) {
+    seconds = 0;
+    minutes++;
+    if (minutes == 60) {
+      minutes = 0;
     }
-
-      let m = minutes < 10 ? "0" + minutes : minutes;
-      let s = seconds < 10 ? "0" + seconds : seconds;
-
-      timerRef.innerHTML = `${m} : ${s}`;
   }
+
+  let m = minutes < 10 ? "0" + minutes : minutes;
+  let s = seconds < 10 ? "0" + seconds : seconds;
+
+  timerRef.innerHTML = `${m} : ${s}`;
+}
 
   // //matched cards
   // const matchCards = () => {
@@ -146,3 +135,8 @@ function displayTimer() {
       }
     });
   };
+
+
+  
+
+  
