@@ -52,7 +52,7 @@ function createCards(arrayOfCards) {
     let cardBack = document.createElement("img");
     cardBack.classList.add("images");
     cardBack.classList.add("flip-card-back");
-    cardBack.src = "/images/newPaw.png";
+    cardBack.src = "/images/Untitled design.png";
 
     flipCard.addEventListener("click", () => {
       cardFront.classList.add("toggle-card");
