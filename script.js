@@ -122,11 +122,15 @@ function displayTimer() {
 // whole function works, with delays! Now we just need to end the game
 function matchCards() {
   let toggledCards = document.querySelectorAll(".toggle-card");
+  let remainingCards = document.querySelectorAll(".flip-card-front");
 
   if (toggledCards.length === 4) {
     if (toggledCards[0].src === toggledCards[2].src) {
       console.log("match");
       setTimeout(removeCards, 1000, toggledCards);
+      if (remainingCards.length <= 2) {
+        clearInterval(int);
+      }
     } else {
       console.log("not a match");
       toggledCards.forEach((element) => {
