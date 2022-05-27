@@ -4,7 +4,9 @@ body {
   background-attachment: fixed;
   background-size: cover;
   cursor: url("/images/pawprint-cursor.png"), default;
+  height: 100vh;
 }
+
 #form {
   display: flex;
 }
@@ -13,6 +15,13 @@ body {
   font-size: larger;
   text-align: center;
   margin: 0px;
+}
+
+#flex-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #game-container {
