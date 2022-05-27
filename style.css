@@ -135,7 +135,7 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Added the media query with larger buttons and title size for larger screens */
+/* Added the media query with larger buttons and title size for larger screens, and changed grid layout */
 @media only screen and (min-width: 780px) {
   #game-title {
     font-size: xx-large;
@@ -149,5 +149,11 @@ body {
   #reset-button {
     height: 100px;
     width: 150px;
+  }
+
+  #game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 7em);
+    grid-template-rows: repeat(3, 7em);
   }
 }
