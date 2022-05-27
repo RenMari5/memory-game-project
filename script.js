@@ -54,7 +54,7 @@ function createCards(arrayOfCards) {
     cardBack.classList.add("flip-card-back");
     cardBack.src = "/images/Untitled design.png";
 
-    flipCard.addEventListener("click", (e) => {
+    flipCard.addEventListener("click", () => {
       cardFront.classList.add("toggle-card");
       cardBack.classList.add("toggle-card");
     });
@@ -65,6 +65,10 @@ function createCards(arrayOfCards) {
     gameContainer.appendChild(flipCard);
   }
 }
+
+// function removeToggle(element) {
+//   element.classList.remove("toggle-card");
+// }
 
 function removeCards(arrayOfCards) {
   arrayOfCards.forEach((item) => {
