@@ -52,7 +52,7 @@ function createCards(arrayOfCards) {
     let cardBack = document.createElement("img");
     cardBack.classList.add("images");
     cardBack.classList.add("flip-card-back");
-    cardBack.src = "/images/mutedBackground.png";
+    cardBack.src = "/images/lessMuted.png";
 
     flipCard.addEventListener("click", () => {
       cardFront.classList.add("toggle-card");
