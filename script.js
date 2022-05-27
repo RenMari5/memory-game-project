@@ -94,15 +94,17 @@ resetButton.addEventListener("click", () => {
   return flipCards;
 });
 
-//matched cards
-const matchCards = () => {
-  // console.log(e);
-  // const matchedCard = e.target;
-  const flipCard = document.querySelectorAll(".toggle-card");
+// //matched cards
+// const matchCards = () => {
+//   // console.log(e);
+//   // const matchedCard = e.target;
+//   const flipCard = document.querySelectorAll(".toggle-card");
 
-  if (flipCard[0].src === flipCard[1].src){
-    console.log("matchCard");
-  }
-};
+//   if (flipCard[0].src === flipCard[1].src){
+//     console.log("matchCard");
+//   }
+// };
 
-matchCards();
+// matchCards();
+
+let matchHandler = function (event) {};
