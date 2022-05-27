@@ -17,7 +17,7 @@ let cards = [
 ];
 let gameCards = document.querySelectorAll(".images");
 
-let [seconds, minutes] = [0, 0];
+let [milliseconds, seconds, minutes] = [0, 0, 0];
 let timerRef = document.querySelector(".timerDisplay");
 let int = null;
 
@@ -103,43 +103,56 @@ resetButton.addEventListener("click", () => {
   startButton.disabled = false;
 
   clearInterval(int);
-  [seconds, minutes] = [0, 0];
+  [milliseconds, seconds, minutes] = [0, 0, 0];
   // timerRef.innerHTML = "00 : 00";
 
   return flipCards;
 });
 
 function displayTimer() {
-  seconds += 10;
-  if (seconds == 60) {
-    seconds = 0;
-    minutes++;
+  milliseconds += 10;
+  if (milliseconds == 1000) {
+    milliseconds = 0;
+    seconds++;
+    if (seconds == 60) {
+      seconds = 0;
+      minutes++;
+      if (minutes == 60) {
+        minutes = 0;
+      }
 
-    let m = minutes < 10 ? "0" + minutes : minutes;
-    let s = seconds < 10 ? "0" + seconds : seconds;
+      let m = minutes < 10 ? "0" + minutes : minutes;
+      let s = seconds < 10 ? "0" + seconds : seconds;
+      let ms =
+        milliseconds < 10
+          ? "00" + milliseconds
+          : milliseconds < 100
+          ? "0" + milliseconds
+          : milliseconds;
 
-    timerRef.innerHTML = `${m} : ${s}`;
-  }
-}
-
-// //matched cards
-// const matchCards = () => {
-//   // console.log(e);
-//   // const matchedCard = e.target;
-//   const flipCard = document.querySelectorAll(".toggle-card");
-
-//   if (flipCard[0].src === flipCard[1].src){
-//     console.log("matchCard");
-//   }
-// };
-
-// matchCards();
-
-let matchHandler = function (event) {
-  let matchCard = document.querySelectorAll(".flip-card");
-  matchCard.addEventListener("click", () => {
-    if (flipCard[0].src.value === flipCard[1].src.value) {
-      console.log(matchCard);
+      timerRef.innerHTML = `${m} : ${s} : ${ms}`;
     }
-  });
-};
+  }
+
+  // //matched cards
+  // const matchCards = () => {
+  //   // console.log(e);
+  //   // const matchedCard = e.target;
+  //   const flipCard = document.querySelectorAll(".toggle-card");
+
+  //   if (flipCard[0].src === flipCard[1].src){
+  //     console.log("matchCard");
+  //   }
+  // };
+
+  // matchCards();
+
+  let matchHandler = function (event) {
+    let matchCard = document.querySelectorAll(".flip-card");
+    matchCard.addEventListener("click", () => {
+      if (flipCard[0].src.value === flipCard[1].src.value) {
+        console.log(matchCard);
+      }
+    });
+  };
+}
