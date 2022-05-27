@@ -57,6 +57,7 @@ function createCards(arrayOfCards) {
     flipCard.addEventListener("click", () => {
       cardFront.classList.add("toggle-card");
       cardBack.classList.add("toggle-card");
+      matchCards();
     });
 
     flipCard.appendChild(cardFront);
@@ -66,9 +67,9 @@ function createCards(arrayOfCards) {
   }
 }
 
-// function removeToggle(element) {
-//   element.classList.remove("toggle-card");
-// }
+function removeToggle(element) {
+  element.classList.remove("toggle-card");
+}
 
 function removeCards(arrayOfCards) {
   arrayOfCards.forEach((item) => {
@@ -116,6 +117,28 @@ function displayTimer() {
   let s = seconds < 10 ? "0" + seconds : seconds;
 
   timerRef.innerHTML = `${m} : ${s}`;
+}
+
+// function now removes cards, but it does not keep the formatting of it
+// it also needs a delay on the remove toggle function but I couldn't figure out how to make that work
+function matchCards() {
+  let toggledCards = document.querySelectorAll(".toggle-card");
+
+  if (toggledCards.length === 4) {
+    if (toggledCards[0].src === toggledCards[2].src) {
+      console.log("match");
+      toggledCards.forEach(element => {
+        element.parentElement.classList.add("matched");
+      });
+      let matchedCards = document.querySelectorAll(".matched");
+      removeCards(matchedCards);
+    } else {
+      console.log("not a match");
+      toggledCards.forEach(element => {
+        removeToggle(element);
+      });
+    }
+  } 
 }
 
   // //matched cards
