@@ -8,7 +8,9 @@ body {
 
 #game-title {
   font-family: "Pacifico", cursive;
+  font-size: larger;
   text-align: center;
+  margin: 0px;
 }
 
 #game-container {
@@ -18,36 +20,36 @@ body {
   /* flex-wrap: wrap;
   flex-direction: row; */
   display: grid;
-  grid-template-columns: repeat(3, 8rem);
-  grid-template-rows: repeat(3, 8rem);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(3, 7em);
+  grid-template-rows: repeat(3, 7em);
+  /* grid-gap: 1em; */
   justify-content: center;
   align-content: center;
 }
 
 #start-button {
   background-image: url("/images/start-button.png");
-  height: 100px;
-  width: 125px;
+  height: 50px;
+  width: 75px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
   border: none;
-  margin: 10px;
+  margin: 0px;
   cursor: pointer;
 }
 
 #reset-button {
   background-image: url("/images/reset-button.png");
-  height: 100px;
-  width: 125px;
+  height: 50px;
+  width: 75px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
   border: none;
-  margin: 10px;
+  margin: 0px;
   cursor: pointer;
 }
 
@@ -66,8 +68,8 @@ body {
 
 .flip-card {
   background-color: transparent;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   /* border: 3px solid #f1f1f1; */
   perspective: 800px;
 }
