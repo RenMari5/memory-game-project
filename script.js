@@ -17,17 +17,17 @@ let cards = [
 ];
 let gameCards = document.querySelectorAll(".images");
 
-function duplicate(array, duplicator) {
-  let buildDeck = [];
-  for (i = 0; i < array.length; i++) {
-    for (j = 0; j < duplicator; j++) {
-      buildDeck.push(array[i]);
-    }
-  }
-  return buildDeck;
-}
+// function duplicate(array, duplicator) {
+//   let buildDeck = [];
+//   for (i = 0; i < array.length; i++) {
+//     for (j = 0; j < duplicator; j++) {
+//       buildDeck.push(array[i]);
+//     }
+//   }
+//   return buildDeck;
+// }
 
-duplicate(cards, 2);
+// duplicate(cards, 2);
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -95,8 +95,14 @@ resetButton.addEventListener("click", () => {
 });
 
 //matched cards
-const matchCards = (e) => {
-  console.log(e);
-  const matchedCard = e.target;
+const matchCards = () => {
+  // console.log(e);
+  // const matchedCard = e.target;
   const flipCard = document.querySelectorAll(".toggle-card");
+
+  if (flipCard[0].src === flipCard[1].src){
+    console.log("matchCard");
+  }
 };
+
+matchCards();
