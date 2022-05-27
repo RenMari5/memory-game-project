@@ -52,7 +52,7 @@ function createCards(arrayOfCards) {
     let cardBack = document.createElement("img");
     cardBack.classList.add("images");
     cardBack.classList.add("flip-card-back");
-    cardBack.src = "/images/Untitled design.png";
+    cardBack.src = "/images/newPaw.png";
 
     flipCard.addEventListener("click", () => {
       cardFront.classList.add("toggle-card");
@@ -83,7 +83,7 @@ startButton.addEventListener("click", () => {
   let shuffledCards = shuffle(duplicateCards);
 
   createCards(shuffledCards);
-  
+
   startButton.disabled = true;
 
   if (int !== null) {
@@ -127,43 +127,38 @@ function matchCards() {
   if (toggledCards.length === 4) {
     if (toggledCards[0].src === toggledCards[2].src) {
       console.log("match");
-      toggledCards.forEach(element => {
+      toggledCards.forEach((element) => {
         element.parentElement.classList.add("matched");
       });
       let matchedCards = document.querySelectorAll(".matched");
       removeCards(matchedCards);
     } else {
       console.log("not a match");
-      toggledCards.forEach(element => {
+      toggledCards.forEach((element) => {
         removeToggle(element);
       });
     }
-  } 
+  }
 }
 
-  // //matched cards
-  // const matchCards = () => {
-  //   // console.log(e);
-  //   // const matchedCard = e.target;
-  //   const flipCard = document.querySelectorAll(".toggle-card");
+// //matched cards
+// const matchCards = () => {
+//   // console.log(e);
+//   // const matchedCard = e.target;
+//   const flipCard = document.querySelectorAll(".toggle-card");
 
-  //   if (flipCard[0].src === flipCard[1].src){
-  //     console.log("matchCard");
-  //   }
-  // };
+//   if (flipCard[0].src === flipCard[1].src){
+//     console.log("matchCard");
+//   }
+// };
 
-  // matchCards();
+// matchCards();
 
-  let matchHandler = function (event) {
-    let matchCard = document.querySelectorAll(".flip-card");
-    matchCard.addEventListener("click", () => {
-      if (flipCard[0].src.value === flipCard[1].src.value) {
-        console.log(matchCard);
-      }
-    });
-  };
-
-
-  
-
-  
+let matchHandler = function (event) {
+  let matchCard = document.querySelectorAll(".flip-card");
+  matchCard.addEventListener("click", () => {
+    if (flipCard[0].src.value === flipCard[1].src.value) {
+      console.log(matchCard);
+    }
+  });
+};
