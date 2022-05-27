@@ -40,6 +40,16 @@ body {
   cursor: pointer;
 }
 
+#stopwatch {
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  min-width: 200px;
+  position: absolute;
+  /* transform: translate(-50%, -50%); */
+  border-radius: 10px;
+}
+
 #reset-button {
   background-image: url("/images/reset-button.png");
   height: 50px;
