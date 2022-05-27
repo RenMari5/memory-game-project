@@ -3,7 +3,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  cursor: url('/images/pawprint-cursor.png'), default;
+  cursor: url("/images/pawprint-cursor.png"), default;
 }
 
 #game-title {

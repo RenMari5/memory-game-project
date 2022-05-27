@@ -107,4 +107,11 @@ resetButton.addEventListener("click", () => {
 
 // matchCards();
 
-let matchHandler = function (event) {};
+let matchHandler = function (event) {
+  let matchCard = document.querySelectorAll(".flip-card");
+  matchCard.addEventListener("click", () => {
+    if (flipCard[0].src.value === flipCard[1].src.value) {
+      console.log(matchCard);
+    }
+  });
+};
