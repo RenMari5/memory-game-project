@@ -119,42 +119,19 @@ function displayTimer() {
   timerRef.innerHTML = `${m} : ${s}`;
 }
 
-
-// it also needs a delay on the remove toggle function but I couldn't figure out how to make that work
+// whole function works, with delays! Now we just need to end the game
 function matchCards() {
   let toggledCards = document.querySelectorAll(".toggle-card");
 
   if (toggledCards.length === 4) {
     if (toggledCards[0].src === toggledCards[2].src) {
       console.log("match");
-      removeCards(toggledCards);
+      setTimeout(removeCards, 1000, toggledCards);
     } else {
       console.log("not a match");
       toggledCards.forEach((element) => {
-        removeToggle(element);
-      });
+        setTimeout(removeToggle, 1000, element);
+      }); 
     }
   }
 }
-
-// //matched cards
-// const matchCards = () => {
-//   // console.log(e);
-//   // const matchedCard = e.target;
-//   const flipCard = document.querySelectorAll(".toggle-card");
-
-//   if (flipCard[0].src === flipCard[1].src){
-//     console.log("matchCard");
-//   }
-// };
-
-// matchCards();
-
-let matchHandler = function (event) {
-  let matchCard = document.querySelectorAll(".flip-card");
-  matchCard.addEventListener("click", () => {
-    if (flipCard[0].src.value === flipCard[1].src.value) {
-      console.log(matchCard);
-    }
-  });
-};
