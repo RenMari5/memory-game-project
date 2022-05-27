@@ -73,7 +73,7 @@ function removeToggle(element) {
 
 function removeCards(arrayOfCards) {
   arrayOfCards.forEach((item) => {
-    gameContainer.removeChild(item);
+    item.parentElement.removeChild(item);
   });
   return arrayOfCards;
 }
@@ -127,9 +127,7 @@ function matchCards() {
   if (toggledCards.length === 4) {
     if (toggledCards[0].src === toggledCards[2].src) {
       console.log("match");
-      toggledCards.forEach(element => {
-        element.parentElement.removeChild(element);
-      });
+      removeCards(toggledCards);
     } else {
       console.log("not a match");
       toggledCards.forEach((element) => {
