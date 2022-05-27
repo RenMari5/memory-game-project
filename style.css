@@ -12,11 +12,12 @@ body {
 }
 #game-title {
   font-family: "Pacifico", cursive;
-  font-size: larger;
+  font-size: x-large;
   text-align: center;
   margin: 0px;
 }
 
+/* Added the container below to center the cards in the middle of the screen and have overall look be more clean */
 #flex-container {
   position: fixed;
   top: 50%;
@@ -51,9 +52,12 @@ body {
   cursor: pointer;
 }
 
+/* Added some font style to the timer, and made the numbers larger and more easy to read */
 #timerDisplay {
   position: relative;
-  width: 90%;
+  font-size: xx-large;
+  font-family: "Pacifico", cursive;
+  width: 100%;
   background: transparent;
   display: flex;
   align-items: center;
@@ -129,4 +133,21 @@ body {
 
 .toggle-card {
   transform: rotateY(180deg);
+}
+
+/* Added the media query with larger buttons and title size for larger screens */
+@media only screen and (min-width: 780px) {
+  #game-title {
+    font-size: xx-large;
+  }
+
+  #start-button {
+    height: 100px;
+    width: 150px;
+  }
+
+  #reset-button {
+    height: 100px;
+    width: 150px;
+  }
 }
