@@ -5,7 +5,9 @@ body {
   background-size: cover;
   cursor: url("/images/pawprint-cursor.png"), default;
 }
-
+#form {
+  display: flex;
+}
 #game-title {
   font-family: "Pacifico", cursive;
   font-size: larger;
@@ -40,14 +42,14 @@ body {
   cursor: pointer;
 }
 
-#stopwatch {
-  background-color: transparent;
-  width: auto;
-  height: auto;
-  min-width: 200px;
-  position: absolute;
-  /* transform: translate(-50%, -50%); */
-  border-radius: 10px;
+#timerDisplay {
+  position: relative;
+  width: 90%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
 }
 
 #reset-button {

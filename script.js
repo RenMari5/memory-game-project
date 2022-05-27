@@ -17,6 +17,10 @@ let cards = [
 ];
 let gameCards = document.querySelectorAll(".images");
 
+let [seconds, minutes] = [0, 0];
+let timerRef = document.querySelector(".timerDisplay");
+let int = null;
+
 // function duplicate(array, duplicator) {
 //   let buildDeck = [];
 //   for (i = 0; i < array.length; i++) {
@@ -76,6 +80,11 @@ startButton.addEventListener("click", () => {
     gameContainer.appendChild(flipCard);
   }
   startButton.disabled = true;
+
+  if (int !== null) {
+    clearInterval(int);
+  }
+  int = setInterval(displayTimer, 10);
 });
 
 // flipCards.forEach((card) => {
@@ -86,13 +95,32 @@ startButton.addEventListener("click", () => {
 
 resetButton.addEventListener("click", () => {
   // Don't know why this isn't working now, it should be deleting each div with a class of .card
+
   const flipCards = document.querySelectorAll(".flip-card");
   flipCards.forEach((item) => {
     gameContainer.removeChild(item);
   });
   startButton.disabled = false;
+
+  clearInterval(int);
+  [seconds, minutes] = [0, 0];
+  // timerRef.innerHTML = "00 : 00";
+
   return flipCards;
 });
+
+function displayTimer() {
+  seconds += 10;
+  if (seconds == 60) {
+    seconds = 0;
+    minutes++;
+
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+
+    timerRef.innerHTML = `${m} : ${s}`;
+  }
+}
 
 // //matched cards
 // const matchCards = () => {
