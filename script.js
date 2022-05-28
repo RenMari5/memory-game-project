@@ -39,8 +39,8 @@ function shuffle(array) {
   return array;
 }
 
-function createCards(arrayOfCards) {
-  for (let item of arrayOfCards) {
+function createCards(array) {
+  for (let item of array) {
     let flipCard = document.createElement("div");
     flipCard.classList.add("flip-card");
 
@@ -71,11 +71,11 @@ function removeToggle(element) {
   element.classList.remove("toggle-card");
 }
 
-function removeCards(arrayOfCards) {
-  arrayOfCards.forEach((item) => {
+function removeCards(array) {
+  array.forEach((item) => {
     item.parentElement.removeChild(item);
   });
-  return arrayOfCards;
+  return array;
 }
 
 startButton.addEventListener("click", () => {
@@ -133,7 +133,7 @@ function matchCards() {
     } else {
       toggledCards.forEach((element) => {
         setTimeout(removeToggle, 1000, element);
-      }); 
+      });
     }
   }
 }
