@@ -1,6 +1,7 @@
 const startButton = document.getElementById("start-button");
 const resetButton = document.getElementById("reset-button");
 const gameContainer = document.getElementById("game-container");
+const youWon = document.getElementById("you-won");
 let cards = [
   "cash.png",
   "crash.png",
@@ -98,6 +99,8 @@ resetButton.addEventListener("click", () => {
 
   startButton.disabled = false;
 
+  youWon.style.display = "none";
+
   clearInterval(int);
   [seconds, minutes] = [0, 0];
   timerRef.innerHTML = "00 : 00";
@@ -129,6 +132,7 @@ function matchCards() {
       setTimeout(removeCards, 1000, toggledCards);
       if (remainingCards.length <= 2) {
         clearInterval(int);
+        youWon.style.display = "block";
       }
     } else {
       toggledCards.forEach((element) => {
