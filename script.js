@@ -148,7 +148,8 @@ function matchCards() {
 
 //adding hide and show functions so that we can have a main page
 //that shows difficulty levels, click one, then it'll dissapear levels
-//and have the start, timer, reset, and change difficulty buttons appear -KJ
+//and have the start, timer, reset, and change difficulty buttons appear
+//so you can play the game -KJ
 //hide and show functions
 
 function hideEasyButton() {
