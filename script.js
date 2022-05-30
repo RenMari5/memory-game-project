@@ -2,6 +2,10 @@ const startButton = document.getElementById("start-button");
 const resetButton = document.getElementById("reset-button");
 const gameContainer = document.getElementById("game-container");
 const youWon = document.getElementById("you-won");
+const easyButton = document.getElementById("easy");
+const hardButton = document.getElementById("hard");
+const changeDiffiultyButton = document.getElementById("change-difficulty");
+
 let cards = [
   "cash.png",
   "crash.png",
@@ -141,3 +145,63 @@ function matchCards() {
     }
   }
 }
+
+//adding hide and show functions so that we can have a main page
+//that shows difficulty levels, click one, then it'll dissapear levels
+//and have the start, timer, reset, and change difficulty buttons appear -KJ
+//hide and show functions
+
+function hideEasyButton() {
+  easyButton.style.display = "none";
+}
+
+function showEasyButton() {
+  easyButton.style.display = "";
+}
+
+function hideHardButton() {
+  hardButton.style.display = "none";
+}
+
+function showHardButton() {
+  hardButton.style.display = "";
+}
+
+function hideChangeDifficultyButton() {
+  changeDiffiultyButton.style.display = "none";
+}
+
+function showChangeDifficultyButton() {
+  changeDiffiultyButton.style.display = "";
+}
+
+function hideStartButton() {
+  startButton.style.display = "none";
+}
+
+function showStartButton() {
+  startButton.style.display = "";
+}
+
+function hideResetButton() {
+  resetButton.style.display = "none";
+}
+
+function showResetButton() {
+  resetButton.style.display = "";
+}
+
+function hideTimer() {
+  timerRef.style.display = "none";
+}
+
+function showTimer() {
+  timerRef.style.display = "";
+}
+
+hideEasyButton();
+hideHardButton();
+hideChangeDifficultyButton();
+// hideStartButton();
+// hideTimer();
+// hideResetButton();
