@@ -76,6 +76,7 @@ body {
 }
 
 #easy {
+  background-image: url("/images/easy-button.png");
   height: 50px;
   width: 75px;
   background-position: center;
@@ -88,6 +89,7 @@ body {
 }
 
 #hard {
+  background-image: url("/images/hard-button.png");
   height: 50px;
   width: 75px;
   background-position: center;
@@ -100,6 +102,7 @@ body {
 }
 
 #change-difficulty {
+  background-image: url("/images/change-difficulty.png");
   height: 50px;
   width: 75px;
   background-position: center;
