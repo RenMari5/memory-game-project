@@ -115,8 +115,9 @@ body {
 /* Also added a smaller size to the font to make it sit on one line in mobile version */
 #you-won {
   display: none;
+
   font-family: "Pacifico", cursive;
-  font-size: x-large;
+  font-size: xx-large;
   text-align: center;
   text-shadow: 2px 2px 5px gray;
   animation: fadeIn 7s;
@@ -170,6 +171,17 @@ body {
     opacity: 1;
   }
 }
+
+/*having some issues getting the picture stacked under the text and centered when in desktop mode below is code I was playing with for that -KJ
+
+/* #you-won,
+#hotdogDog {
+  display: flex;
+  flex-direction: column;
+}
+#hotdogDog {
+  align-items: center;
+} */
 
 @media only screen and (min-width: 780px) {
   #game-title {
