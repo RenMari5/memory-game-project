@@ -75,6 +75,12 @@ body {
   cursor: pointer;
 }
 
+#difficulty-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
 #easy {
   background-image: url("/images/easy-button.png");
   height: 50px;
