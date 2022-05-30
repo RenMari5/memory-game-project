@@ -234,6 +234,21 @@ body {
     width: 150px;
   }
 
+  #easy {
+    height: 100px;
+    width: 150px;
+  }
+
+  #hard {
+    height: 100px;
+    width: 150px;
+  }
+
+  #change-difficulty {
+    height: 100px;
+    width: 150px;
+  }
+
   #game-container {
     display: grid;
     grid-template-columns: repeat(4, 7em);
