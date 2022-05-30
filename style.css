@@ -75,6 +75,42 @@ body {
   cursor: pointer;
 }
 
+#easy {
+  height: 50px;
+  width: 75px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  cursor: pointer;
+  }
+
+#hard {
+  height: 50px;
+  width: 75px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  cursor: pointer;
+  }
+
+#change-difficulty {
+  height: 50px;
+  width: 75px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  cursor: pointer;
+}
+
 .images {
   position: relative;
   transform-style: preserve-3d;
@@ -128,6 +164,8 @@ body {
   -o-animation: fadeIn 7s;
   -ms-animation: fadeIn 7s;
 }
+
+
 
 @keyframes fadeIn {
   0% {
@@ -195,6 +233,7 @@ body {
     grid-template-rows: repeat(3, 7em);
   }
 
+  
   /* Added larger size for larger screens */
   #you-won {
     font-size: xx-large;
