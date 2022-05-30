@@ -113,9 +113,11 @@ body {
 
 /* Added text shadow to the writing to make it pop */
 /* Also added a smaller size to the font to make it sit on one line in mobile version */
+
+/* added flex-direction here to stack text and dog, we can chat on if we want her to have a fixed size -KJ*/
 #you-won {
   display: none;
-
+  flex-direction: column;
   font-family: "Pacifico", cursive;
   font-size: xx-large;
   text-align: center;
@@ -171,17 +173,6 @@ body {
     opacity: 1;
   }
 }
-
-/*having some issues getting the picture stacked under the text and centered when in desktop mode below is code I was playing with for that -KJ
-
-/* #you-won,
-#hotdogDog {
-  display: flex;
-  flex-direction: column;
-}
-#hotdogDog {
-  align-items: center;
-} */
 
 @media only screen and (min-width: 780px) {
   #game-title {

@@ -132,7 +132,7 @@ function matchCards() {
       setTimeout(removeCards, 1000, toggledCards);
       if (remainingCards.length <= 2) {
         clearInterval(int);
-        youWon.style.display = "block";
+        youWon.style.display = "flex";
       }
     } else {
       toggledCards.forEach((element) => {
