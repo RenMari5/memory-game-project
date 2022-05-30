@@ -85,7 +85,7 @@ body {
   border: none;
   margin: 0px;
   cursor: pointer;
-  }
+}
 
 #hard {
   height: 50px;
@@ -97,7 +97,7 @@ body {
   border: none;
   margin: 0px;
   cursor: pointer;
-  }
+}
 
 #change-difficulty {
   height: 50px;
@@ -155,9 +155,11 @@ body {
   display: none;
   flex-direction: column;
   font-family: "Pacifico", cursive;
-  font-size: xx-large;
+  font-size: x-large;
   text-align: center;
   text-shadow: 2px 2px 5px gray;
+  margin-left: auto;
+  margin-right: auto;
   animation: fadeIn 7s;
   -webkit-animation: fadeIn 7s;
   -moz-animation: fadeIn 7s;
@@ -165,7 +167,12 @@ body {
   -ms-animation: fadeIn 7s;
 }
 
-
+/* Made the dog picture smaller and postioned it center */
+#hotdogDog {
+  height: 50%;
+  width: 50%;
+  transform: translate(50%, 0);
+}
 
 @keyframes fadeIn {
   0% {
@@ -233,7 +240,6 @@ body {
     grid-template-rows: repeat(3, 7em);
   }
 
-  
   /* Added larger size for larger screens */
   #you-won {
     font-size: xx-large;
