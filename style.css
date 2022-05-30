@@ -75,6 +75,7 @@ body {
   cursor: pointer;
 }
 
+/* Added spacing and centered additional buttons - Ren */
 #difficulty-container {
   display: flex;
   justify-content: space-around;
@@ -243,6 +244,7 @@ body {
     width: 150px;
   }
 
+  /* Added button size media queries - Ren */
   #easy {
     height: 100px;
     width: 150px;
@@ -264,7 +266,6 @@ body {
     grid-template-rows: repeat(3, 7em);
   }
 
-  /* Added larger size for larger screens */
   #you-won {
     font-size: xx-large;
   }
