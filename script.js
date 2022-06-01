@@ -5,6 +5,8 @@ const youWon = document.getElementById("you-won");
 const easyButton = document.getElementById("easy");
 const hardButton = document.getElementById("hard");
 const changeDifficultyButton = document.getElementById("change-difficulty");
+let easyMode = false;
+let hardMode = false;
 
 let cards = [
   "cash.png",
@@ -13,6 +15,8 @@ let cards = [
   "winston.png",
   "yuna.png",
   "kitte.png",
+  "eevee.png",
+  "pablo.png",
 ];
 
 let [seconds, minutes] = [0, 0];
@@ -84,10 +88,15 @@ function removeCards(array) {
 }
 
 startButton.addEventListener("click", () => {
+  // shuffled cards first to get random selection, then decide if we want all of the cards based on if we're in hard or easy mode,
+  // then create our game based on the amount of cards picked
+  let shuffledCards = shuffle(cards);
+  if (easyMode === true) {
+    cards = cards.splice(0, 6);
+  }
   let duplicateCards = duplicate(cards);
-  let shuffledCards = shuffle(duplicateCards);
 
-  createCards(shuffledCards);
+  createCards(duplicateCards);
 
   startButton.disabled = true;
 
@@ -221,11 +230,22 @@ easyButton.addEventListener("click", () => {
   hideHardButton();
 
   easyButton.disabled = true;
+  easyMode = true;
 });
 
-// hardButton.addEventListener("click", () => {
 
-// }
+// I just copied the code from the easy button
+hardButton.addEventListener("click", () => {
+  showResetButton();
+  showStartButton();
+  showChangeDifficultyButton();
+  showTimer();
+  hideEasyButton();
+  hideHardButton();
+
+  hardButton.disabled = true;
+  hardMode = true;
+});
 
 changeDifficultyButton.addEventListener("click", () => {
   hideChangeDifficultyButton();
