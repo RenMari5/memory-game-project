@@ -7,6 +7,7 @@ const hardButton = document.getElementById("hard");
 const changeDifficultyButton = document.getElementById("change-difficulty");
 let easyMode = false;
 let hardMode = false;
+let counter = 0;
 
 let cards = [
   "cash.png",
@@ -64,10 +65,15 @@ function createCards(array) {
     cardBack.src = "/images/lessMuted.png";
 
     flipCard.addEventListener("click", function toggleCard() {
-      cardFront.classList.add("toggle-card");
-      cardBack.classList.add("toggle-card");
-
-      matchCards();
+      counter++;
+      console.log(counter);
+      if (counter <= 2) {
+        cardFront.classList.add("toggle-card");
+        cardBack.classList.add("toggle-card");
+  
+        matchCards();
+      }
+      
     });
 
     flipCard.appendChild(cardFront);
@@ -79,12 +85,14 @@ function createCards(array) {
 
 function removeToggle(element) {
   element.classList.remove("toggle-card");
+  counter = 0;
 }
 
 function removeCards(array) {
   array.forEach((item) => {
     item.parentElement.removeChild(item);
   });
+  counter = 0;
   return array;
 }
 
@@ -141,16 +149,12 @@ function matchCards() {
   let toggledCards = document.querySelectorAll(".toggle-card");
   let allCards = document.querySelectorAll(".flip-card");
   let remainingCards = document.querySelectorAll(".flip-card-front");
+  
 
-  if (toggledCards.length === 4) {
-    // This isn't working because toggleCard isn't defined outside of the createCards function,
-    // but we need to remove the event listener after two cards are selected so that we don't break our game
-    // by selecting too many cards
-    // allCards.forEach((card) => {
-    //   card.removeEventListener("click", toggleCard);
-    // });
+  if (toggledCards.length === 4 && counter >= 2) {
     if (toggledCards[0].src === toggledCards[2].src) {
       setTimeout(removeCards, 1000, toggledCards);
+      
       if (remainingCards.length <= 2) {
         clearInterval(int);
         youWon.style.display = "flex";
