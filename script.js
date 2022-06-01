@@ -200,9 +200,29 @@ function showTimer() {
   timerRef.style.display = "";
 }
 
-hideEasyButton();
-hideHardButton();
+// hideEasyButton();
+// hideHardButton();
 hideChangeDifficultyButton();
-// hideStartButton();
-// hideTimer();
-// hideResetButton();
+hideStartButton();
+hideTimer();
+hideResetButton();
+
+//creating a funtion that when east is clicked, hides easy and hard button, shows start/reset/timer/changedifficulty
+
+//if easy is clicked, show change difficulty, start, reset, and timer - hide easy and hard
+//if change difficulty is clicked, show easy and hard, hide change difficulty, start, reset, and timer
+
+easyButton.addEventListener("click", () => {
+  showResetButton();
+  showStartButton();
+  showChangeDifficultyButton();
+  showTimer();
+});
+
+// hardButton.addEventListener("click", () => {
+
+// }
+
+// changeDiffiultyButton.addEventListener('click', () => {
+
+// })

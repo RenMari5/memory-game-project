@@ -83,27 +83,29 @@ body {
 }
 
 #easy {
-  background-image: url("/images/easy-button.png");
+  background-image: url("/images/hard\ \(2\).png");
   height: 50px;
-  width: 75px;
+  width: 50px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
-  border: none;
+  border: 1px solid brown;
+  border-radius: 20%;
   margin: 0px;
   cursor: pointer;
 }
 
 #hard {
-  background-image: url("/images/hard-button.png");
+  background-image: url("/images/hard\ \(1\).png");
   height: 50px;
-  width: 75px;
+  width: 50px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
-  border: none;
+  border: 1px solid brown;
+  border-radius: 20%;
   margin: 0px;
   cursor: pointer;
 }
@@ -247,12 +249,12 @@ body {
   /* Added button size media queries - Ren */
   #easy {
     height: 100px;
-    width: 150px;
+    width: 100px;
   }
 
   #hard {
     height: 100px;
-    width: 150px;
+    width: 100px;
   }
 
   #change-difficulty {
