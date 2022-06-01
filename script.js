@@ -63,7 +63,7 @@ function createCards(array) {
     cardBack.classList.add("flip-card-back");
     cardBack.src = "/images/lessMuted.png";
 
-    flipCard.addEventListener("click", function toggleCard(){
+    flipCard.addEventListener("click", function toggleCard() {
       cardFront.classList.add("toggle-card");
       cardBack.classList.add("toggle-card");
 
@@ -93,7 +93,7 @@ startButton.addEventListener("click", () => {
   // then create our game based on the amount of cards picked
   let shuffledCards = shuffle(cards);
   if (easyMode === true) {
-    cards = cards.splice(0, 6);
+    cards = shuffledCards.splice(0, 6);
   }
   let duplicateCards = duplicate(cards);
 
@@ -240,7 +240,6 @@ easyButton.addEventListener("click", () => {
   easyButton.disabled = true;
   easyMode = true;
 });
-
 
 // I just copied the code from the easy button
 hardButton.addEventListener("click", () => {
