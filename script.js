@@ -4,7 +4,7 @@ const gameContainer = document.getElementById("game-container");
 const youWon = document.getElementById("you-won");
 const easyButton = document.getElementById("easy");
 const hardButton = document.getElementById("hard");
-const changeDiffiultyButton = document.getElementById("change-difficulty");
+const changeDifficultyButton = document.getElementById("change-difficulty");
 
 let cards = [
   "cash.png",
@@ -169,11 +169,11 @@ function showHardButton() {
 }
 
 function hideChangeDifficultyButton() {
-  changeDiffiultyButton.style.display = "none";
+  changeDifficultyButton.style.display = "none";
 }
 
 function showChangeDifficultyButton() {
-  changeDiffiultyButton.style.display = "";
+  changeDifficultyButton.style.display = "";
 }
 
 function hideStartButton() {
@@ -217,12 +217,21 @@ easyButton.addEventListener("click", () => {
   showStartButton();
   showChangeDifficultyButton();
   showTimer();
+  hideEasyButton();
+  hideHardButton();
+
+  easyButton.disabled = true;
 });
 
 // hardButton.addEventListener("click", () => {
 
 // }
 
-// changeDiffiultyButton.addEventListener('click', () => {
-
-// })
+changeDifficultyButton.addEventListener("click", () => {
+  hideChangeDifficultyButton();
+  hideStartButton();
+  hideTimer();
+  hideResetButton();
+  showEasyButton();
+  showHardButton();
+});
