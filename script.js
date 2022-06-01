@@ -63,9 +63,10 @@ function createCards(array) {
     cardBack.classList.add("flip-card-back");
     cardBack.src = "/images/lessMuted.png";
 
-    flipCard.addEventListener("click", () => {
+    flipCard.addEventListener("click", function toggleCard(){
       cardFront.classList.add("toggle-card");
       cardBack.classList.add("toggle-card");
+
       matchCards();
     });
 
@@ -138,9 +139,16 @@ function displayTimer() {
 // Need to add winner banner, can be in the if (remainincards.length) loop
 function matchCards() {
   let toggledCards = document.querySelectorAll(".toggle-card");
+  let allCards = document.querySelectorAll(".flip-card");
   let remainingCards = document.querySelectorAll(".flip-card-front");
 
   if (toggledCards.length === 4) {
+    // This isn't working because toggleCard isn't defined outside of the createCards function,
+    // but we need to remove the event listener after two cards are selected so that we don't break our game
+    // by selecting too many cards
+    // allCards.forEach((card) => {
+    //   card.removeEventListener("click", toggleCard);
+    // });
     if (toggledCards[0].src === toggledCards[2].src) {
       setTimeout(removeCards, 1000, toggledCards);
       if (remainingCards.length <= 2) {
