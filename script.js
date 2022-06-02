@@ -103,6 +103,8 @@ startButton.addEventListener("click", () => {
   let shuffledCards = shuffle(cards);
   if (easyMode === true) {
     cards = shuffledCards.splice(0, 6);
+  } else if (hardMode === true) {
+    cards = shuffledCards.splice(0, 8);
   }
   let duplicateCards = duplicate(cards);
 

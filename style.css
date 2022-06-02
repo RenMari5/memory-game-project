@@ -30,19 +30,20 @@ body {
 
 #game-container {
   display: grid;
-  gap: 20px;
+  gap: 5px;
   justify-content: center;
   align-content: center;
+  width: 99%;
 }
 
 .smallGrid {
-  grid-template-columns: repeat(4, 5.5em);
-  grid-template-rows: repeat(5, 5.5em);
+  grid-template-columns: repeat(3, 5.5em);
+  grid-template-rows: repeat(4, 5.5em);
 }
 
 .bigGrid {
-  grid-template-columns: repeat(5, 5.5em);
-  grid-template-rows: repeat(4, 5.5em);
+  grid-template-columns: repeat(4, 5.5em);
+  grid-template-rows: repeat(5, 5.5em);
 }
 
 #start-button {
@@ -279,7 +280,7 @@ body {
   }
 
   .bigGrid {
-    grid-template-columns: repeat(5, 9em);
+    grid-template-columns: repeat(4, 9em);
     grid-template-rows: repeat(4, 9em);
   }
 
@@ -287,11 +288,9 @@ body {
     grid-template-columns: repeat(4, 9em);
     grid-template-rows: repeat(5, 9em);
   }
-  /* #game-container {
-    display: grid;
-    grid-template-columns: repeat(4, 9em);
-    grid-template-rows: repeat(5, 9em);
-  } */
+  #game-container {
+    gap: 10px;
+  }
 
   #you-won {
     font-size: xx-large;
