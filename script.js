@@ -160,6 +160,7 @@ function matchCards() {
       if (remainingCards.length <= 2) {
         clearInterval(int);
         youWon.style.display = "flex";
+        audio.play("/images/What's new Pussy Cat.mp3");
       }
     } else {
       toggledCards.forEach((element) => {
