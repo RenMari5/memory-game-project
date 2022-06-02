@@ -102,13 +102,14 @@ startButton.addEventListener("click", () => {
   // then create our game based on the amount of cards picked
   let shuffledCards = shuffle(cards);
   if (easyMode === true) {
-    cards = shuffledCards.splice(0, 6);
+    shuffledCards = shuffledCards.splice(0, 6);
   } else if (hardMode === true) {
-    cards = shuffledCards.splice(0, 8);
+    shuffledCards = shuffledCards.splice(0, 8);
   }
-  let duplicateCards = duplicate(cards);
+  let duplicateCards = duplicate(shuffledCards);
+  let playingCards = shuffle(duplicateCards);
 
-  createCards(duplicateCards);
+  createCards(playingCards);
 
   startButton.disabled = true;
 
@@ -150,7 +151,6 @@ function displayTimer() {
 // Need to add winner banner, can be in the if (remainincards.length) loop
 function matchCards() {
   let toggledCards = document.querySelectorAll(".toggle-card");
-  let allCards = document.querySelectorAll(".flip-card");
   let remainingCards = document.querySelectorAll(".flip-card-front");
 
   if (toggledCards.length === 4 && counter >= 2) {
