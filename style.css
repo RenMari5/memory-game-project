@@ -21,19 +21,28 @@ body {
 }
 
 #flex-container {
-  position: fixed;
+  /* position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 75px;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  margin-top: 20px;
 }
 
 #game-container {
   display: grid;
-  grid-template-columns: repeat(4, 5.5em);
-  grid-template-rows: repeat(5, 5.5em);
+
   justify-content: center;
   align-content: center;
+}
+
+.smallGrid {
+  grid-template-columns: repeat(4, 5.5em);
+  grid-template-rows: repeat(5, 5.5em);
+}
+
+.bigGrid {
+  grid-template-columns: repeat(5, 5.5em);
+  grid-template-rows: repeat(4, 5.5em);
 }
 
 #start-button {
@@ -240,7 +249,7 @@ body {
   .flip-card {
     width: 125px;
     height: 125px;
-    perspective: 800px;
+    /* perspective: 800px; */
   }
 
   #start-button {
@@ -269,17 +278,26 @@ body {
     width: 150px;
   }
 
-  #game-container {
-    display: grid;
+  .bigGrid {
     grid-template-columns: repeat(5, 9em);
     grid-template-rows: repeat(4, 9em);
   }
+
+  .smallGrid {
+    grid-template-columns: repeat(4, 9em);
+    grid-template-rows: repeat(5, 9em);
+  }
+  /* #game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 9em);
+    grid-template-rows: repeat(5, 9em);
+  } */
 
   #you-won {
     font-size: xx-large;
   }
 
-  #flex-container {
+  /* #flex-container {
     margin-top: 125px;
-  }
+  } */
 }

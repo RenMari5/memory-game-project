@@ -240,7 +240,7 @@ easyButton.addEventListener("click", () => {
   showTimer();
   hideEasyButton();
   hideHardButton();
-
+  gameContainer.classList.add("smallGrid");
   easyButton.disabled = true;
   easyMode = true;
 });
@@ -254,6 +254,7 @@ hardButton.addEventListener("click", () => {
   hideEasyButton();
   hideHardButton();
 
+  gameContainer.classList.add("bigGrid");
   hardButton.disabled = true;
   hardMode = true;
 });
