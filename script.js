@@ -164,9 +164,8 @@ function matchCards() {
       clearInterval(int);
       gameContainer.style.display = "none";
       youWon.style.display = "flex";
-      // function playAudio() {
-      //   audio.play();
-      // }
+      const pussyCat = document.getElementById("catSong");
+      pussyCat.play();
     } else {
       toggledCards.forEach((element) => {
         setTimeout(removeToggle, 1000, element);
