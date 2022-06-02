@@ -155,16 +155,15 @@ function matchCards() {
 
   if (toggledCards.length === 4 && counter >= 2) {
     if (toggledCards[0].src === toggledCards[2].src) {
-      setTimeout(removeCards, 1000, toggledCards);
-
-      if (remainingCards.length <= 2) {
-        clearInterval(int);
-        youWon.style.display = "flex";
-        audio.play("/images/What's new Pussy Cat.mp3");
-      }
+      setTimeout(removeCards, 1000, toggledCards); }
+    if (remainingCards.length <= 2) {
+      clearInterval(int);
+      gameContainer.style.display = "none";
+      youWon.style.display = "flex";
+      audio.play("/images/What's new Pussy Cat.mp3");
     } else {
       toggledCards.forEach((element) => {
-        setTimeout(removeToggle, 1000, element);
+      setTimeout(removeToggle, 1000, element);
       });
     }
   }
