@@ -101,10 +101,11 @@ startButton.addEventListener("click", () => {
   // shuffled cards first to get random selection, then decide if we want all of the cards based on if we're in hard or easy mode,
   // then create our game based on the amount of cards picked
   let shuffledCards = shuffle(cards);
+  console.log(shuffledCards.length);
   if (easyMode === true) {
-    shuffledCards = shuffledCards.splice(0, 6);
+    shuffledCards = shuffledCards.slice(0, 6);
   } else if (hardMode === true) {
-    shuffledCards = shuffledCards.splice(0, 8);
+    shuffledCards = shuffledCards.slice(0, 8);
   }
   let duplicateCards = duplicate(shuffledCards);
   let playingCards = shuffle(duplicateCards);
@@ -112,6 +113,8 @@ startButton.addEventListener("click", () => {
   createCards(playingCards);
 
   startButton.disabled = true;
+
+  gameContainer.style.display = "grid";
 
   if (int !== null) {
     clearInterval(int);
@@ -155,7 +158,8 @@ function matchCards() {
 
   if (toggledCards.length === 4 && counter >= 2) {
     if (toggledCards[0].src === toggledCards[2].src) {
-      setTimeout(removeCards, 1000, toggledCards); }
+      setTimeout(removeCards, 1000, toggledCards);
+    }
     if (remainingCards.length <= 2) {
       clearInterval(int);
       gameContainer.style.display = "none";
@@ -163,7 +167,7 @@ function matchCards() {
       audio.play("/images/What's new Pussy Cat.mp3");
     } else {
       toggledCards.forEach((element) => {
-      setTimeout(removeToggle, 1000, element);
+        setTimeout(removeToggle, 1000, element);
       });
     }
   }
