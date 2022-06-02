@@ -19,6 +19,7 @@ let cards = [
   "kitte.png",
   "eevee.png",
   "pablo.png",
+  "mitch.png",
 ];
 
 let [seconds, minutes] = [0, 0];
