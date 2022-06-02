@@ -25,12 +25,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 75px;
 }
 
 #game-container {
   display: grid;
-  grid-template-columns: repeat(3, 7em);
-  grid-template-rows: repeat(3, 7em);
+  grid-template-columns: repeat(4, 5.5em);
+  grid-template-rows: repeat(5, 5.5em);
   justify-content: center;
   align-content: center;
 }
@@ -134,8 +135,8 @@ body {
 
 .flip-card {
   background-color: transparent;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   perspective: 800px;
 }
 
@@ -236,6 +237,12 @@ body {
     font-size: xx-large;
   }
 
+  .flip-card {
+    width: 125px;
+    height: 125px;
+    perspective: 800px;
+  }
+
   #start-button {
     height: 100px;
     width: 150px;
@@ -264,11 +271,15 @@ body {
 
   #game-container {
     display: grid;
-    grid-template-columns: repeat(4, 7em);
-    grid-template-rows: repeat(3, 7em);
+    grid-template-columns: repeat(5, 9em);
+    grid-template-rows: repeat(4, 9em);
   }
 
   #you-won {
     font-size: xx-large;
+  }
+
+  #flex-container {
+    margin-top: 125px;
   }
 }

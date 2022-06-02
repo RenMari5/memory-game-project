@@ -10,6 +10,7 @@ let hardMode = false;
 let counter = 0;
 
 let cards = [
+  "beemo.png",
   "cash.png",
   "crash.png",
   "marlee.png",
@@ -64,16 +65,15 @@ function createCards(array) {
     cardBack.classList.add("flip-card-back");
     cardBack.src = "/images/lessMuted.png";
 
-    flipCard.addEventListener("click", function toggleCard() {
+    cardBack.addEventListener("click", function toggleCard() {
       counter++;
       console.log(counter);
       if (counter <= 2) {
         cardFront.classList.add("toggle-card");
         cardBack.classList.add("toggle-card");
-  
+
         matchCards();
       }
-      
     });
 
     flipCard.appendChild(cardFront);
@@ -149,12 +149,11 @@ function matchCards() {
   let toggledCards = document.querySelectorAll(".toggle-card");
   let allCards = document.querySelectorAll(".flip-card");
   let remainingCards = document.querySelectorAll(".flip-card-front");
-  
 
   if (toggledCards.length === 4 && counter >= 2) {
     if (toggledCards[0].src === toggledCards[2].src) {
       setTimeout(removeCards, 1000, toggledCards);
-      
+
       if (remainingCards.length <= 2) {
         clearInterval(int);
         youWon.style.display = "flex";
